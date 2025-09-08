@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="/public/Icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArtikWeb</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+      }
+      .bg-image {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: url('public/photo-wall-texture-pattern.jpg') center/cover no-repeat;
+      }
+      .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(63, 58, 42, 0.5);
+      }
+      #root {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-image"></div>
+    <div class="overlay"></div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
