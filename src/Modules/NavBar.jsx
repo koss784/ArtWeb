@@ -7,10 +7,10 @@ const NavBar = () => {
   return (
     <div className='container pb-2 pt-2 bg-gray-50 flex justify-center text-center max-w-screen h-full '>
       <div>
-        <div className='text-orange-950 text-2xl font-bold '>
+        <div className='text-orange-950 text-2xl font-bold pb-1.5'>
           <p>Year</p>
         </div>
-        <div className='justify-center items-center flex font-medium'>
+        <div className='justify-center items-center flex font-medium pb-2'>
           {years.map((year) => (
             <button
               key={year}
@@ -26,7 +26,7 @@ const NavBar = () => {
           ))}
         </div>
       </div>
-      <div className='my-18 absolute bg-amber-500 w-full h-5'></div>  
+      <div className='my-20 absolute bg-amber-500 w-full h-5'></div>  
       
     </div>
     
