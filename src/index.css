@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
 .framed {
-  border: 10px solid transparent; 
-  border-image: url('/img/frame.png') 100 repeat; 
+  border: 1vh solid transparent; 
+  border-image: url('/src/img/frame.png') 100 repeat; 
 }
