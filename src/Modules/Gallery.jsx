@@ -6,8 +6,8 @@ const Gallery = () => {
   const imageArray25 = Object.values(images2025)
   const imageArray24 = Object.values(images2024)
   const imageArray23 = Object.values(images2023)
-    console.log(images2025)
-console.log(Object.values(images2025))
+
+  
   const [activeImg, setActiveImg] = useState(null)
 
   return (

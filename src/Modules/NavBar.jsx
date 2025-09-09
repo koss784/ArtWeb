@@ -1,11 +1,9 @@
   import React from 'react'
-  import imageArray2024 from './Gallery.jsx'
   import { useState } from 'react';
   const NavBar = () => {
     const currentYear = new Date().getFullYear();
     const [selectedYear, setSelectedYear] = useState(currentYear)
     const years = [2023, 2024, 2025]
-
     return (
       <>
         <div className='container pb-2 pt-2 bg-gray-50 flex justify-center text-center max-w-screen h-full '>
@@ -27,17 +25,15 @@
                 >
                   {year}
                 </button>
+                
               ))}
-              
+              <div id='imArr24' className={`${selectedYear === 2024 ? '' : 'hidden'}`}>
+                {}
+              </div>
             </div>
           </div> 
         </div>
         <div id='Line1' className='relative bg-amber-500 max-w-screen h-2'></div> 
-        <div className=''>
-          {selectedYear === 2024 && (
-            imageArray2024. //classlist
-          )}
-        </div>
       </>
     )
   }
