@@ -42,28 +42,45 @@ const Gallery = ({selectedYear }) => {
     setBackdropBrightness(50); // Back to normal
   };
 
+    const getImageName = (imgPath) => {
+    // Extract filename from path
+    const filename = imgPath.split('/').pop();
+    // Remove file extension
+    const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
+    // Convert underscores and hyphens to spaces
+    const formattedName = nameWithoutExt.replace(/[_-]/g, ' ');
+    // Capitalize first letter of each word
+    return formattedName.replace(/\b\w/g, l => l.toUpperCase());
+  };
+
+
   return (
     <>
 
-      <div className='container bg-[url(/Fon.jpg)] absolute bg-cover bg-center max-w-screen h-screen'>
-        <div 
-          id='backdrop1' 
-          className='w-full h-full backdrop-blur-sm transition-all duration-300'
-          style={{ backdropFilter: `brightness(${backdropBrightness}%) blur(4px)` }}
-          >
-        </div>
-      </div>
-      <div className='absolute justify-center items-center w-screen'>
-        <div className=' mr-3  grid grid-cols-4 lg:grid-cols-6 size-fit lg:gap-5 gap-0'>
+      
+      <div className='bg-linear-to-b from-red-950 from-10% via-amber-950 via-70% to-amber-800  absolute justify-center items-center w-screen h-screen'>
+        <div className='grid grid-cols-4 lg:grid-cols-7 lg:ml-3 size-fit lg:gap-1 gap-0'>
           {currentImages.map((img) => (
-            <img
-              key={img}
-              className='lg:w-[25vh] md:w-[15vh] sm:w-[15vh] w-[12vh] m-3 overflow-hidden framed shadow-2xl shadow-gray-950/50'
-              src={img}
-              onClick={() => setActiveImg(img)}
+             <div 
+              key={img} 
+              className="relative group overflow-hidden   m-3"
               onMouseEnter={() => handleImageHover(img)}
               onMouseLeave={handleImageLeave}
-            />
+            >
+              <div className="relative">
+                <img
+                  className='shadow-md shadow-gray-950/50 max-h-[40vh]  framed object-cover '
+                  src={img}
+                  onClick={() => setActiveImg(img)}
+                />
+                <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/70 to-transparent p-2">
+                  <h3 className="text-gray-300 pl-1 text-s font-extralight truncate">
+                    {getImageName(img)}
+                  </h3>
+                </div>
+              </div>
+            </div>
+
           ))}
         </div>
         {currentImages.length === 0 && (
@@ -73,19 +90,26 @@ const Gallery = ({selectedYear }) => {
         )}
         {activeImg && (
           <div 
-            className='fixed pl-9 inset-0 z-30 bg-cover max-w-screen h-[100vh] bg-gray-950/60 py-10 flex items-center justify-center'
-            onClick={() => setActiveImg(null)}
+            className='fixed pl-9 inset-0 z-30 bg-cover backdrop-blur-md max-w-screen h-[100vh] bg-gray-950/60 py-10 flex items-center justify-center'
+            onClick={() => {setActiveImg(null)}}
           >
-            <img 
-              src={activeImg}
-              className='lg:max-h-[90vh] lg:max-w-[90vh] max-w-[40vh] max-h-[100vh] object-contain rounded-lg shadow-2xl'
-            />
-            <button
-              className='lg:-translate-y-[47vh] text-5xl text-white -translate-y-28'
-              onClick={() => setActiveImg(null)}
-            >
-              ×
-            </button>
+            <div className='relative justify-center'>
+              <p className='absolute -translate-y-6 top-0 left-1/2 -translate-x-1/2 text-3xl font-sans  text-white '>
+                {getImageName(activeImg)}
+              </p>
+
+              <button
+                className='absolute top-2 right-2 text-5xl text-white'
+                onClick={() => setActiveImg(null)}
+              >
+                ×
+              </button>
+
+              <img 
+                src={activeImg}
+                className='lg:max-h-[90vh] translate-y-5 lg:max-w-[90vh] max-w-[40vh] max-h-[100vh] object-contain rounded-lg shadow-2xl'
+              />
+            </div>
           </div>
         )}
 
