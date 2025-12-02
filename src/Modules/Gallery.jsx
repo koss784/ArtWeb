@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(useGSAP);
-
+//20251202
 const Gallery = ({selectedYear }) => {
 
   const imagesByYear = {
