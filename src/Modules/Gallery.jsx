@@ -58,8 +58,8 @@ const Gallery = ({selectedYear }) => {
     <>
 
       
-      <div className='bg-linear-to-b from-red-950 from-10% via-amber-950 via-70% to-amber-800  absolute justify-center items-center w-screen h-screen'>
-        <div className='grid grid-cols-4 lg:grid-cols-7 lg:ml-3 size-fit lg:gap-1 gap-0'>
+      <div className='bg-amber-800 absolute justify-center items-center w-screen h-screen '>
+        <div className='bg-linear-to-b from-red-950 from-10% via-amber-950 via-70% to-amber-800 gallery grid '>
           {currentImages.map((img) => (
              <div 
               key={img} 

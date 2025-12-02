@@ -9,3 +9,9 @@ html, body {
   border: 1vh solid transparent; 
   border-image: url('/src/img/frame.png') 100 repeat; 
 }
+
+.gallery {
+   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+   margin-right: 1vh;
+   width: 101%;
+}
