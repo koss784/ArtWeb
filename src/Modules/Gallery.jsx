@@ -73,7 +73,7 @@ const Gallery = ({selectedYear }) => {
                   src={img}
                   onClick={() => setActiveImg(img)}
                 />
-                <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-black/70 to-transparent p-2">
+                <div className="absolute top-0 left-0 right-0 bg-linear-to-b from-black/70 to-transparent p-2">
                   <h3 className="text-gray-300 pl-1 text-s font-extralight truncate">
                     {getImageName(img)}
                   </h3>
@@ -90,7 +90,7 @@ const Gallery = ({selectedYear }) => {
         )}
         {activeImg && (
           <div 
-            className='fixed pl-9 inset-0 z-30 bg-cover backdrop-blur-md max-w-screen h-[100vh] bg-gray-950/60 py-10 flex items-center justify-center'
+            className='fixed pl-9 inset-0 z-30 bg-cover backdrop-blur-md max-w-screen h-screen bg-gray-950/60 py-10 flex items-center justify-center'
             onClick={() => {setActiveImg(null)}}
           >
             <div className='relative justify-center'>
@@ -107,7 +107,7 @@ const Gallery = ({selectedYear }) => {
 
               <img 
                 src={activeImg}
-                className='lg:max-h-[90vh] translate-y-5 lg:max-w-[90vh] max-w-[40vh] max-h-[100vh] object-contain rounded-lg shadow-2xl'
+                className='lg:max-h-[90vh] translate-y-5 lg:max-w-[90vh] max-w-[40vh] max-h-screen object-contain rounded-lg shadow-2xl'
               />
             </div>
           </div>

@@ -5,7 +5,7 @@
     return (
       <>
         <div className='container z-50 bg-black max-w-screen h-full '>
-          <div className='relative bg-gradient-to-b from-white from-80% to-red-950  w-screen m-0'>
+          <div className='relative bg-linear-to-b from-white from-80% to-red-950  w-screen m-0'>
             <div className='flex-col ml-2'>
               <div className='text-black text-2xl font-medium pb-1.5 pt-2'>
                 <p>Year of Creation</p>
