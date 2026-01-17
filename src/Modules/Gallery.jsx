@@ -48,7 +48,7 @@ const Gallery = ({selectedYear }) => {
     // Remove file extension and Vite hash (e.g., "Dunya-D2u5lzmF.jpg" -> "Dunya")
     // First remove file extension, then remove Vite hash (appears after space in formatted name)
     let nameWithoutExt = filename.replace(/\.[^/.]+$/, ''); // Remove extension
-    nameWithoutExt = nameWithoutExt.replace(/-[a-zA-Z0-9]{8}$/, ''); // Remove Vite hash like -D2u5lzmF    // Convert underscores and hyphens to spaces
+    nameWithoutExt = nameWithoutExt.replace(/-[a-zA-Z0-9]+$/, ''); // Remove Vite hash like -D2u5lzmF    // Convert underscores and hyphens to spaces
     const formattedName = nameWithoutExt.replace(/[_-]/g, ' ');
     // Capitalize first letter of each word
     return formattedName.replace(/\b\w/g, l => l.toUpperCase());
