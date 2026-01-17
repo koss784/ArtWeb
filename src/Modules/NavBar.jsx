@@ -1,5 +1,6 @@
   import React from 'react'
   import Gallery from './Gallery.jsx'
+import Autograph from '../img/Autograph.png'
   const NavBar = ({ selectedYear, setSelectedYear }) => {
     const years = [2020, 2021 ,2022 ,2023 , 2024, 2025]
     return (
@@ -28,7 +29,7 @@
               </div>
              </div> 
             <img
-              src='src/img/Autograph.png'
+              src={Autograph}
               className='absolute size-20 object-contain top-0 right-10'
 
             />
