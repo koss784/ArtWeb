@@ -44,9 +44,9 @@ const Gallery = ({selectedYear }) => {
 
     const getImageName = (imgPath) => {
     // Extract filename from path
-    const filename = imgPath.split('/').pop();
-    // Remove file extension
-    const nameWithoutExt = filename.replace(/\.[^/.]+$/, "");
+        const filename = imgPath.split('/').pop();
+    // Remove file extension and Vite hash (e.g., "Dunya-D2u5lzmF.jpg" -> "Dunya")
+    const nameWithoutExt = filename.replace(/-[a-zA-Z0-9]+\.[^/.]+$/, '').replace(/\.[^/.]+$/, '');
     // Convert underscores and hyphens to spaces
     const formattedName = nameWithoutExt.replace(/[_-]/g, ' ');
     // Capitalize first letter of each word
