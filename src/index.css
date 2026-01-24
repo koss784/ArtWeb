@@ -6,7 +6,7 @@ html, body {
 }
 
 .framed {
-  border: 0.3vh solid transparent; 
+  border: 1vhh solid transparent; 
     border-image: url('./img/Frame.png') 100 repeat;}
 
 .gallery {
