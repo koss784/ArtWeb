@@ -2,7 +2,7 @@
   import Gallery from './Gallery.jsx'
 import Autograph from '../img/Autograph.png'
   const NavBar = ({ selectedYear, setSelectedYear }) => {
-    const years = [2020, 2021 ,2022 ,2023 , 2024, 2025]
+    const years = [2020, 2021 ,2022 ,2023 , 2024, 2025, 2026]
     return (
       <>
         <div className='container z-50 bg-black max-w-screen h-full '>
