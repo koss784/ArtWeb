@@ -7,6 +7,9 @@ gsap.registerPlugin(useGSAP);
 const Gallery = ({selectedYear }) => {
 
   const imagesByYear = {
+    2026: Object.values(
+      import.meta.glob("/src/img/2026/" + "\x2A.{png,jpg,jpeg}", { eager: true, import: "default" })
+    ),
     2025: Object.values(
       import.meta.glob("/src/img/2025/" + "\x2A.{png,jpg,jpeg}", { eager: true, import: "default" })
     ),
