@@ -73,7 +73,7 @@ const Gallery = ({selectedYear }) => {
             >
               <div className="relative">
                 <img
-                  className='shadow-md shadow-gray-950/50 max-h-[40vh]  framed object-contain '
+                  className='ax-h-[40vh]  framed object-contain '
                   src={img}
                   onClick={() => setActiveImg(img)}
                 />
